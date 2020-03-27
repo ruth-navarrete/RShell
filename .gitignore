@@ -1,0 +1,56 @@
+CMakeCache.txt
+CMakeFiles  
+cmake_install.cmake
+Makefile
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+*.pc
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+rshell
+test
+
+# CMake Temp Files
+CMakeCache.txt
+CMakeFiles
+
+# testing folders and output files
+integration_tests/single_output.txt
+integration_tests/multiple_output.txt
+integration_tests/exit_output.txt
+integration_tests/commented_output.txt
+#~/assignment-yabbie_ruth/integration_tests/no
+#~/assignment-yabbie_ruth/integration_tests/tester
+#~/assignment-yabbie_ruth/integration_tests/commented_output.txt
+#~/assignemnt-yabbie_ruth/integration_tests/exit_output.txt
+#~/assignment-yabbie_ruth/integration_tests/multiple_output.txt
+#~/assignment-yabbie_ruth/integration_tests/single_output.txt
