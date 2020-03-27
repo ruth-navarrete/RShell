@@ -36,30 +36,3 @@ When executing a line of commands, you will need to account for the following re
 **Connector**: Connector is a composite class. First, it will output the commmand prompt (e.g `$`) and then wait for user input. From the user input, it will parse through, determining what input will create what objects. For example, if first of the user input is an Executable, it will then take in any arguments up until a connector and create an Executable. Once a connector is encountered in the user input, the Executable will be pushed onto a vector of Command* and then a Connector will be created and pushed onto the same vector. The populated vetor is in the pattern of executable, connector, executable... so on so forth. 
 
 In terms of implementing the `run(Command*)` function, Connector calls run on an executable, and depending on the result given by `execvp` as well as the current connector, will iterate through the vector of Command* (executable, connector, executable...) and call either the functions conditional_both for the && connector, xor_connector for the || connetor, and and_connector for the ; connector. These mentioned functions will also implement `virtual int run(Command*)` by calling run on each individual executable and actually executing it. Conditional_both will use the return from the previous Executable to determine if the next Executable will be run (if the previous Executable succeeds the next Executable will run). Xor_connector will use the return of the previous Execuable to determine if the next Executable will run (if the previous Executable fails, the next Executable will run). And_connector will run the next Executable regardless of the success previous Executable.
-
-## Development Roadmap
-1. [ ] [Issue #1](https://github.com/cs100/assignment-yabbie_ruth/issues/1) Create Command class
-2. [ ] [Issue #2](https://github.com/cs100/assignment-yabbie_ruth/issues/2) Create parsing function
-3. [ ] [Issue #3](https://github.com/cs100/assignment-yabbie_ruth/issues/3) Test parsing function
-4. [ ] [Issue #4](https://github.com/cs100/assignment-yabbie_ruth/issues/4) Create Executable class
-5. [ ] [Issue #5](https://github.com/cs100/assignment-yabbie_ruth/issues/5) Test Executable class
-6. [ ] [Issue #6](https://github.com/cs100/assignment-yabbie_ruth/issues/6) Create Argument class [__NO LONGER AN ISSUE THAT NEEDS TO BE ADDRESSES__]
-  * there will be subclasses added to this class, current soecifications unknown [__NO LONGER AN ISSUE THAT NEEDS TO BE ADDRESSES__]
-7. [ ] [Issue #7](https://github.com/cs100/assignment-yabbie_ruth/issues/7) Test Argument class [__NO LONGER AN ISSUE THAT NEEDS TO BE ADDRESSES__]
-8. [ ] [Issue #8](https://github.com/cs100/assignment-yabbie_ruth/issues/8) Create Connector class
-9. [ ] [Issue #9](https://github.com/cs100/assignment-yabbie_ruth/issues/9) Create or_connector class
-10. [ ] [Issue #12](https://github.com/cs100/assignment-yabbie_ruth/issues/12) Test or_connector class
-11. [ ] [Issue #10](https://github.com/cs100/assignment-yabbie_ruth/issues/10) Create conditional_both class
-12. [ ] [Issue #13](https://github.com/cs100/assignment-yabbie_ruth/issues/13) Test conditional_both class
-13. [ ] [Issue #11](https://github.com/cs100/assignment-yabbie_ruth/issues/11) Create and_connector class
-14. [ ] [Issue #14](https://github.com/cs100/assignment-yabbie_ruth/issues/14) Test and_connector class
-15. [ ] [Issue #15](https://github.com/cs100/assignment-yabbie_ruth/issues/15) Test entire program
-  *  __ISSUES 16 TRHOUGH 19 WERE PULL REQUESTS__
-20. [ ] [Issue #20](https://github.com/cs100/assignment-yabbie_ruth/issues/20) Implement test implementation/parsing in parsing function
-21. [ ] [Issue #21](https://github.com/cs100/assignment-yabbie_ruth/issues/21) Test test in parsing function
-22. [ ] [Issue #22](https://github.com/cs100/assignment-yabbie_ruth/issues/22) Test test in Execuatable
-27. [ ] [Issue #27](https://github.com/cs100/assignment-yabbie_ruth/issues/27) Implement parentheses implementation/parsing in parsing function
-23. [ ] [Issue #23](https://github.com/cs100/assignment-yabbie_ruth/issues/23) Test parentheses implementation in parsing function
-24. [ ] [Issue #24](https://github.com/cs100/assignment-yabbie_ruth/issues/24) Test parentheses in Connector
-25. [ ] [Issue #25](https://github.com/cs100/assignment-yabbie_ruth/issues/25) Update integration tests
-26. [ ] [Issue #26](https://github.com/cs100/assignment-yabbie_ruth/issues/26) Update unit tests if we need more
